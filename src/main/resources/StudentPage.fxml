@@ -21,8 +21,8 @@
             <TableColumn fx:id="Teacher" prefWidth="173.60009765625" text="Teacher" />
         </columns>
       </TableView>
-      <Button fx:id="show" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Show courses" />
-      <Button fx:id="btnSearch" layoutX="50.0" layoutY="277.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" text="Search" />
+      <Button fx:id="show" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="126.0" text="Show courses" />
+      <Button fx:id="btnSearch" layoutX="50.0" layoutY="277.0" mnemonicParsing="false" onAction="#searchName" prefHeight="26.0" prefWidth="95.0" text="Search" />
       <TextField fx:id="searchtxt" layoutX="50.0" layoutY="346.0" />
       <Label fx:id="lblsearch" layoutX="50.0" layoutY="381.0" prefHeight="38.0" prefWidth="286.0" textFill="#29b11a">
          <font>
