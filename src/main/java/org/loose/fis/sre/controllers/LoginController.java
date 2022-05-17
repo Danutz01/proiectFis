@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
@@ -24,7 +25,7 @@ public class LoginController {
     private TextField name;
 
     @FXML
-    private TextField pass;
+    private PasswordField parola;
 
     @FXML
     private ChoiceBox role;
@@ -36,11 +37,12 @@ public class LoginController {
     }
     public void Login(ActionEvent event) throws IOException {
         String nn = name.getText();
-        String p = pass.getText();
+        String p = parola.getText();
         for(User u : user.find() ){
 
             if(nn.equals(u.getUsername()) && UserService.encodePassword(nn,p).equals(u.getPassword())){
-              currentUser = u;System.out.println("asdasfasfasf");
+              currentUser = u;
+              System.out.println("asdasfasfasf");
               Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("StudentPage.fxml"));
               Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
               Scene scene = new Scene(root);

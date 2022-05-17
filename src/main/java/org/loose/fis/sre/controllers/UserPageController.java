@@ -40,6 +40,7 @@ public class UserPageController {
 
     @FXML
     private TextArea studentId;
+
     public ObservableList<Course> list = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -66,12 +67,12 @@ public class UserPageController {
    public void searchName(){
         String item = searchtxt.getText();
         ObjectRepository<User> user = UserService.getDatabase();
-       for(User u : user.find()) {
-         if(u.getRole().equals("Teacher")) {
-             for (int i = 0; i < u.contor; i++) {
-                 if (item.equals(u.curs[i].name)) {
-                     lblsearch.setText(u.curs[i].id + " " + u.curs[i].name + " " + u.curs[i].prof);
-                     lblsearch.setVisible(true);
+        for(User u : user.find()) {
+          if(u.getRole().equals("Teacher")) {
+              for (int i = 0; i < u.contor; i++) {
+                  if (item.equals(u.curs[i].name)) {
+                      lblsearch.setText(u.curs[i].id + " " + u.curs[i].name + " " + u.curs[i].prof);
+                      lblsearch.setVisible(true);
                  }
              }
          }
