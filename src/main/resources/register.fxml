@@ -49,6 +49,7 @@
         <Button layoutX="10.0" onAction="#handleRegisterAction" prefHeight="30.0" prefWidth="100.0" text="Register" />
     </HBox>
    <Label prefHeight="18.0" prefWidth="134.0" GridPane.columnIndex="4" />
+   <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#toLogin" prefHeight="26.0" prefWidth="68.0" text="Login" GridPane.columnIndex="2" GridPane.rowIndex="5" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
