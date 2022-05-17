@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+javafx {
+    version = "18.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+group = 'org.loose.fis'
+version = '0.1 School'
+description = 'School base application '
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+dependencies {
+    implementation 'org.openjfx:javafx-controls:18.0.1'
+    implementation 'org.openjfx:javafx-fxml:18.0.1'
+    implementation 'org.dizitart:nitrite:3.4.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+}
+
+mainClassName = 'org.loose.fis.sre.Main'
