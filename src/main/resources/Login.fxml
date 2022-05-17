@@ -33,5 +33,10 @@
       <TextField fx:id="name" layoutX="258.0" layoutY="106.0" prefHeight="32.0" prefWidth="210.0" />
       <TextField fx:id="pass" layoutX="258.0" layoutY="168.0" prefHeight="32.0" prefWidth="210.0" />
       <ChoiceBox fx:id="role" layoutX="262.0" layoutY="245.0" prefHeight="32.0" prefWidth="210.0" />
+      <Label fx:id="lbl" layoutX="87.0" layoutY="287.0" prefHeight="41.0" prefWidth="626.0" textFill="#c73312">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
