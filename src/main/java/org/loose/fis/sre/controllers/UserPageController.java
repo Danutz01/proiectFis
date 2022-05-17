@@ -41,10 +41,13 @@ public class UserPageController {
     @FXML
     private TextArea studentId;
 
+    @FXML
+    private Label usernameLabel;
+
     public ObservableList<Course> list = FXCollections.observableArrayList();
 
     public void initialize() {
-        studentId.setText(LoginController.currentUser.getUsername());
+        usernameLabel.setText(LoginController.currentUser.getUsername());
         lblsearch.setVisible(false);
 
         Id.setCellValueFactory(new PropertyValueFactory<Course,String>("id"));

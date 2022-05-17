@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,7 +13,6 @@
 <AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: acd2ed;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.UserPageController">
    <children>
       <Label layoutX="552.0" layoutY="50.0" text="Student:" />
-      <TextArea fx:id="studentId" layoutX="616.0" layoutY="39.0" prefHeight="33.0" prefWidth="126.0" />
       <ImageView fx:id="img" fitHeight="189.0" fitWidth="229.0" layoutX="24.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@user.png" />
@@ -35,5 +33,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <Label fx:id="usernameLabel" layoutX="604.0" layoutY="29.0" prefHeight="57.0" prefWidth="159.0" style="-fx-alignment: center;" />
    </children>
 </AnchorPane>
