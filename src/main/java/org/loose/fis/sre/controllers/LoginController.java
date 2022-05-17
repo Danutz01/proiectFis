@@ -29,18 +29,19 @@ public class LoginController {
     @FXML
     private ChoiceBox role;
     public ObjectRepository<User> user = UserService.getDatabase();
-    public User currentUser;
+    public static User currentUser;
     public int valid =0;
     public void initialize() {
         role.getItems().addAll("Student", "Teacher");
     }
-    public void login(ActionEvent event) throws IOException {
+    public void Login(ActionEvent event) throws IOException {
         String nn = name.getText();
         String p = pass.getText();
         for(User u : user.find() ){
+
             if(nn.equals(u.getUsername()) && UserService.encodePassword(nn,p).equals(u.getPassword())){
-              currentUser = u;
-              Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("UserPage.fxml"));
+              currentUser = u;System.out.println("asdasfasfasf");
+              Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("StudentPage.fxml"));
               Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
               Scene scene = new Scene(root);
               stage.setScene(scene);
