@@ -7,6 +7,8 @@ public class User {
     private String username;
     private String password;
     private String role;
+    public Course[] curs = new Course[10];
+    public int contor = 0;
 
     public User(String username, String password, String role) {
         this.username = username;
