@@ -28,27 +28,29 @@ public class LoginController {
 
     @FXML
     private ChoiceBox role;
-    public ObjectRepository<User> user;
+    public ObjectRepository<User> user = UserService.getDatabase();
     public User currentUser;
-
+    public int valid =0;
     public void initialize() {
         role.getItems().addAll("Student", "Teacher");
     }
     public void login(ActionEvent event) throws IOException {
-        user = UserService.getDatabase();
+        String nn = name.getText();
+        String p = pass.getText();
         for(User u : user.find() ){
-            if(name.getText().equals(u.getUsername()) &&  UserService.encodePassword(name.getText(),pass.getText()).equals(pass.getText())){
-             currentUser = u;
-             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("UserPage.fxml"));
+            if(nn.equals(u.getUsername()) && UserService.encodePassword(nn,p).equals(u.getPassword())){
+              currentUser = u;
+              Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("UserPage.fxml"));
               Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
               Scene scene = new Scene(root);
               stage.setScene(scene);
               stage.setTitle("School App");
               stage.show();
+              valid = 1;
             }
-            else{
-                lbl.setText(" Invalid credentials !!! ");
-            }
+        }
+        if (valid == 0){
+            lbl.setText(" Invalid credentials !!!");
         }
     }
 
