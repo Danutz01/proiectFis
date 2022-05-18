@@ -30,7 +30,8 @@ public class UserPageController {
 
     @FXML
     private ImageView img;
-
+    @FXML
+    private Label dlbl;
     @FXML
     private Label lblsearch;
 
@@ -56,6 +57,7 @@ public class UserPageController {
         Name.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
         Teacher.setCellValueFactory(new PropertyValueFactory<Course, String>("prof"));
         Table.setVisible(false);
+        dlbl.setVisible(false);
     }
     public void search(){
         for(User u : users.find()) {
@@ -96,10 +98,12 @@ public class UserPageController {
         }
    }
     public void Download(){
-     search();
+     Table.setVisible(true);
      Course curs = Table.getSelectionModel().getSelectedItem();
-     //LoginController.currentUser.downloadList.add(curs);
-
+     LoginController.currentUser.downloadList.add(curs);
+     dlbl.setVisible(true);
+     String txt = "Downloaded "+ curs.toString();
+     dlbl.setText(txt);
     }
 
 }

@@ -31,7 +31,7 @@
       <Button fx:id="show" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="126.0" text="Show courses" />
       <Button fx:id="btnSearch" layoutX="50.0" layoutY="277.0" mnemonicParsing="false" onAction="#searchName" prefHeight="26.0" prefWidth="95.0" text="Search" />
       <TextField fx:id="searchtxt" layoutX="50.0" layoutY="346.0" />
-      <Label fx:id="lblsearch" layoutX="50.0" layoutY="381.0" prefHeight="38.0" prefWidth="286.0" textFill="#29b11a">
+      <Label fx:id="lblsearch" layoutX="24.0" layoutY="381.0" prefHeight="38.0" prefWidth="269.0" textFill="#29b11a">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -45,5 +45,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Label fx:id="dlbl" layoutX="306.0" layoutY="409.0" prefHeight="26.0" prefWidth="301.0" />
    </children>
 </AnchorPane>
