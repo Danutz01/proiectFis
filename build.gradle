@@ -17,7 +17,7 @@ repositories {
 
 group = 'org.loose.fis'
 version = '0.1 School'
-description = 'School base application '
+description = 'School basic application '
 
 sourceCompatibility = 17
 targetCompatibility = 17

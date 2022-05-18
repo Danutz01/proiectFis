@@ -42,7 +42,6 @@ public class LoginController {
 
             if(nn.equals(u.getUsername()) && UserService.encodePassword(nn,p).equals(u.getPassword())){
               currentUser = u;
-              System.out.println("asdasfasfasf");
               Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("StudentPage.fxml"));
               Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
               Scene scene = new Scene(root);
