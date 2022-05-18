@@ -10,4 +10,18 @@ public class Course {
         this.name = name;
         this.prof = prof;
     }
+    public String getId(){
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getProf() {
+        return prof;
+    }
+    public String toString(){
+        return id + " " + name + " " + prof;
+    }
 }
