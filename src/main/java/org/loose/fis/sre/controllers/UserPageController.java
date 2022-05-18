@@ -12,7 +12,9 @@ import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
 import org.dizitart.no2.objects.ObjectRepository;
 public class UserPageController {
-
+    private int valid=1;
+    @FXML
+    private ListView<String> listview = new ListView();
     @FXML
     private TableColumn<Course, String> Id;
 
@@ -58,6 +60,7 @@ public class UserPageController {
         Teacher.setCellValueFactory(new PropertyValueFactory<Course, String>("prof"));
         Table.setVisible(false);
         dlbl.setVisible(false);
+        listview.setVisible(false);
     }
     public void search(){
         for(User u : users.find()) {
@@ -72,6 +75,7 @@ public class UserPageController {
         }
         Table.setItems(list);
         Table.setVisible(true);
+        listview.setVisible(false);
     }
    public void searchName(){
         String item = searchtxt.getText();
@@ -99,11 +103,25 @@ public class UserPageController {
    }
     public void Download(){
      Table.setVisible(true);
+     listview.setVisible(false);
      Course curs = Table.getSelectionModel().getSelectedItem();
      LoginController.currentUser.downloadList.add(curs);
      dlbl.setVisible(true);
      String txt = "Downloaded "+ curs.toString();
      dlbl.setText(txt);
+    }
+    public void History(){
+        listview.setVisible(true);
+        if (valid%2==0){listview.setVisible(false);}
+        listview.getItems().clear();
+        for(int i = 0; i<LoginController.currentUser.downloadList.size();i++){
+            String txt = "";
+            if( LoginController.currentUser.downloadList.get(i)!=null){
+                txt = txt + LoginController.currentUser.downloadList.get(i).toString();
+            }
+            listview.getItems().add(txt);
+        }
+        valid++;
     }
 
 }
