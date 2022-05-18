@@ -1,5 +1,11 @@
 package org.loose.fis.sre.controllers;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.model.Course;
 import javafx.collections.FXCollections;
@@ -11,6 +17,9 @@ import javafx.scene.image.ImageView;
 import org.loose.fis.sre.model.User;
 import org.loose.fis.sre.services.UserService;
 import org.dizitart.no2.objects.ObjectRepository;
+
+import java.io.IOException;
+
 public class UserPageController {
     private int valid=1;
     @FXML
@@ -121,7 +130,16 @@ public class UserPageController {
             }
             listview.getItems().add(txt);
         }
+        
         valid++;
+    }
+    public void Back(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("School App");
+        stage.show();
     }
 
 }

@@ -49,5 +49,10 @@
       <Label fx:id="dlbl" layoutX="306.0" layoutY="409.0" prefHeight="26.0" prefWidth="301.0" />
       <Button fx:id="hist" layoutX="50.0" layoutY="264.0" mnemonicParsing="false" onAction="#History" prefHeight="26.0" prefWidth="126.0" text="My History" />
       <ListView fx:id="listview" layoutX="349.0" layoutY="106.0" prefHeight="286.0" prefWidth="371.0" />
+      <Button fx:id="download1" layoutX="22.0" layoutY="422.0" mnemonicParsing="false" onAction="#Back" prefHeight="26.0" prefWidth="56.0" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
