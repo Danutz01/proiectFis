@@ -119,7 +119,7 @@ public class UserPageController {
             if( LoginController.currentUser.downloadList.get(i)!=null){
                 txt = txt + LoginController.currentUser.downloadList.get(i).toString();
             }
-            //listview.getItems().add(txt);
+            listview.getItems().add(txt);
         }
         valid++;
     }
