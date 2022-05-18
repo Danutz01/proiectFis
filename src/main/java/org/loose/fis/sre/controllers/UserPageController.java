@@ -112,15 +112,15 @@ public class UserPageController {
     }
     public void History(){
         listview.setVisible(true);
-        /*if (valid%2==0){listview.setVisible(false);}
+        if (valid%2==0){listview.setVisible(false);}
         listview.getItems().clear();
         for(int i = 0; i<LoginController.currentUser.downloadList.size();i++){
             String txt = "";
             if( LoginController.currentUser.downloadList.get(i)!=null){
                 txt = txt + LoginController.currentUser.downloadList.get(i).toString();
             }
-            listview.getItems().add(txt);
-        }*/
+            //listview.getItems().add(txt);
+        }
         valid++;
     }
 
