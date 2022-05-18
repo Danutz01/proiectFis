@@ -49,4 +49,5 @@ public class RegistrationController {
         stage.setTitle("School App");
         stage.show();
     }
+
 }

@@ -35,6 +35,7 @@ public class LoginController {
     public void initialize() {
         role.getItems().addAll("Student", "Teacher");
     }
+
     public void Login(ActionEvent event) throws IOException {
         String nn = name.getText();
         String p = parola.getText();
@@ -42,6 +43,7 @@ public class LoginController {
 
             if(nn.equals(u.getUsername()) && UserService.encodePassword(nn,p).equals(u.getPassword())){
               currentUser = u;
+              if("Student".equals(u.getRole())){
               Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("StudentPage.fxml"));
               Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
               Scene scene = new Scene(root);
@@ -49,11 +51,19 @@ public class LoginController {
               stage.setTitle("School App");
               stage.show();
               valid = 1;
+             }
             }
         }
         if (valid == 0){
-            lbl.setText(" Invalid credentials !!!");
+            lbl.setText(" Invalid credentials/Role !!!");
         }
     }
-
+    public void Back(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("School App");
+        stage.show();
+    }
 }
