@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -29,7 +30,7 @@
         </columns>
       </TableView>
       <Button fx:id="show" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="126.0" text="Show courses" />
-      <Button fx:id="btnSearch" layoutX="50.0" layoutY="277.0" mnemonicParsing="false" onAction="#searchName" prefHeight="26.0" prefWidth="95.0" text="Search" />
+      <Button fx:id="btnSearch" layoutX="50.0" layoutY="308.0" mnemonicParsing="false" onAction="#searchName" prefHeight="26.0" prefWidth="95.0" text="Search" />
       <TextField fx:id="searchtxt" layoutX="50.0" layoutY="346.0" />
       <Label fx:id="lblsearch" layoutX="24.0" layoutY="381.0" prefHeight="38.0" prefWidth="269.0" textFill="#29b11a">
          <font>
@@ -46,5 +47,7 @@
          </font>
       </Button>
       <Label fx:id="dlbl" layoutX="306.0" layoutY="409.0" prefHeight="26.0" prefWidth="301.0" />
+      <Button fx:id="hist" layoutX="50.0" layoutY="264.0" mnemonicParsing="false" onAction="#History" prefHeight="26.0" prefWidth="126.0" text="My History" />
+      <ListView fx:id="listview" layoutX="349.0" layoutY="106.0" prefHeight="286.0" prefWidth="371.0" />
    </children>
 </AnchorPane>
