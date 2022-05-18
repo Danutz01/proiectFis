@@ -1,8 +1,8 @@
-# Simple Registration Example
+# School Application
 A JavaFX Application demonstrating how to implement a simplistic approach of a registration use case using the following technologies:
-* [Java 15 or 16](https://www.oracle.com/java/technologies/javase-downloads.html)
+* [Java 17](https://www.oracle.com/java/technologies/javase-downloads.html)
 * [JavaFX](https://openjfx.io/openjfx-docs/) (as GUI)
-* [Maven](https://maven.apache.org/) / [Gradle](https://gradle.org/) (as build tools)
+* [Gradle](https://gradle.org/) (as build tools)
 * [Nitrite Java](https://www.dizitart.org/nitrite-database.html) (as Database)
 
 ## Prerequisites
@@ -25,11 +25,11 @@ To set up and run the project locally on your machine, please follow the next st
 ### Clone the repository
 Clone the repository using:
 ```git
-git clone https://github.com/fis2021/SimpleRegistrationExample
+git clone https://github.com/Danutz01/proiectFis.git
 ```
 
 ### Verify that the project Builds locally
-Open a command line session and `cd SimpleRegistrationExample`.
+Open a command line session and `cd School`.
 If you have installed all the prerequisites, you should be able to run any of the following commands:
 ```
 mvn clean install
@@ -76,13 +76,13 @@ However, if you try to register a user with the same username again, you will se
 ### What happened???
 
 Behind the scenes, the app actually saved the **admin** user in the database, encrypting the password. To see that it actually worked, we need to inspect the database that was created in the 
-`$HOME/.registration-example/registration-example.db` (for Linux and MacOS) and `%USERPROFILE%/.registration-example/registration-example.db` file, using the [nitrite-explorer-3.4.3.jar](https://github.com/nitrite/nitrite-java/releases/download/v3.4.3/nitrite-explorer-3.4.3.jar), provided by Nitrite Java.
+`$HOME/.SchoolApp/SchoolApp.db` (for Linux and MacOS) and `%USERPROFILE%/.SchoolApp/SchoolApp.db` file, using the [nitrite-explorer-3.4.3.jar](https://github.com/nitrite/nitrite-java/releases/download/v3.4.3/nitrite-explorer-3.4.3.jar), provided by Nitrite Java.
 Download the jar and run `java --module-path $PATH_TO_FX --add-modules javafx.controls nitrite-explorer-3.4.3.jar
 `. You should see a window like this open:
 
 <img src="docs/NitriteExplorer.png" width="250"/>
 
-Choose the `$HOME/.registration-example/registration-example.db` and add `test` as both the username, and the password to access the database, then click `Open`.
+Choose the `$HOME/.SchoolApp/SchoolApp.db` and add `test` as both the username, and the password to access the database, then click `Open`.
 
 You should be able to see that there is a single database entry for the `Users` Collection, namely the one you just added. Also, please notice that the password is saved encrypted!
 
@@ -122,7 +122,7 @@ Nitrite Java was used in the [UserService.java](https://github.com/fis2021/Simpl
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFile("registration-example.db").toFile())
+                .filePath(getPathToFile("SchoolApp.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
