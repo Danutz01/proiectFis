@@ -2,12 +2,16 @@ package org.loose.fis.sre.model;
 
 import org.dizitart.no2.objects.Id;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     @Id
     private String username;
     private String password;
     private String role;
     public Course[] curs = new Course[10];
+    public List<Course> downloadList = new ArrayList<Course>();
     public int contor = 0;
 
     public User(String username, String password, String role) {
