@@ -97,7 +97,7 @@ public class UserPageController {
    }
     public void Download(){
      search();
-     //Course curs = Table.getSelectionModel().getSelectedItem();
+     Course curs = Table.getSelectionModel().getSelectedItem();
      //LoginController.currentUser.downloadList.add(curs);
 
     }
