@@ -22,7 +22,10 @@ public class User {
 
     public User() {
     }
-
+    public void addCourse(Course c){
+        curs[contor] = c;
+        contor++;
+    }
     public String getUsername() {
         return username;
     }

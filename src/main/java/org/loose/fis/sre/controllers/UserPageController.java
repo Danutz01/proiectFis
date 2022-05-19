@@ -60,6 +60,7 @@ public class UserPageController {
     private Label usernameLabel;
 
     public ObservableList<Course> list = FXCollections.observableArrayList();
+    public ObservableList<Course> listofcourses = FXCollections.observableArrayList();
     private ObjectRepository<User> users = UserService.getDatabase();
     private ObjectRepository<User> users2 = UserService.getDatabase();
     public void initialize() {
@@ -70,17 +71,15 @@ public class UserPageController {
         Table.setVisible(false);
         dlbl.setVisible(false);
         listview.setVisible(false);
+        Course c1 = new Course("10001","F.I.S.","Marinescu");
+        Course c2 = new Course("10002","O.O.P.","Marinescu");
+        Course c3 = new Course("10003","P.O.O.","Marinescu");
+        listofcourses.add(c1);listofcourses.add(c2);listofcourses.add(c3);
     }
     public void search(){
-        for(User u : users.find()) {
-            if ("Teacher".equals(u.getRole())) {
-                Course a = new Course("1234", "fizica", "Liviu Cadariu");
-                u.curs[0] = a;
-                u.contor++;
-                for (int i = 0; i < u.contor; i++) {
-                    list.add(u.curs[i]);
-                }
-            }
+        for(int i=0;i<listofcourses.size();i++) {
+            Course c = listofcourses.get(i);
+            list.add(c);
         }
         Table.setItems(list);
         Table.setVisible(true);
@@ -130,7 +129,7 @@ public class UserPageController {
             }
             listview.getItems().add(txt);
         }
-        
+
         valid++;
     }
     public void Back(ActionEvent event) throws IOException{
